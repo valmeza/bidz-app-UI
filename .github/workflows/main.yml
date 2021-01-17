@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: bidz-app-ui
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    # Get new instance of computer / virtual machine here
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2        
+      
+      - name: Cache Node Files
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-        
+      
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+        
+      - name: Build Angular Project
+        run: npm install
+
+      - name: Run Tests
+        run: npm run test-headless
