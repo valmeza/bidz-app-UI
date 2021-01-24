@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ItemsComponent } from './pages/items/items.component';
 import { ItemComponent } from './pages/item/item.component';
 import { ItemDetailsComponent } from './components/item-details/item-details.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
 	declarations: [
@@ -15,7 +16,7 @@ import { ItemDetailsComponent } from './components/item-details/item-details.com
 		ItemComponent,
 		ItemDetailsComponent
 	],
-	imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+	imports: [BrowserModule, AppRoutingModule, HttpClientModule, CommonModule],
 	providers: [],
 	bootstrap: [AppComponent]
 })

@@ -12,6 +12,6 @@ export class ItemService {
 	constructor(private http: HttpClient) {}
 
 	getAllItems(): Observable<Array<Item>> {
-		return this.http.get<Array<Item>>(`${this.url}+/items`);
+		return this.http.get<Array<Item>>(`${this.url}/items`);
 	}
 }
