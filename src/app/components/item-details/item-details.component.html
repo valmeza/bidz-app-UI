@@ -1,4 +1,11 @@
 <div *ngIf="item">
-  <p>{{item.name}}</p>
-  <p>{{item.ownerId}}</p>
+  <p>{{ item.name }}</p>
+  <img src="{{ item.photo }}"/>
+  <p>{{ item.description }}</p>
+  <p>{{ item.bidMinimumAmount }}</p>
+  <p>{{ item.bidIncrement }}</p>
+  <p>{{ item.ownerId }}</p>
+  <p>{{ item.bidderId }}</p>
+  <p>{{ item.bidStartDateTime }}</p>
+  <p>{{ item.bidEndDateTime }}</p>
 </div>
